@@ -20,7 +20,9 @@ echo "--> checking out the landscape"
 ls -al
 
 echo "--> lint docker files using hadolint"
+
 hadolint ./.github/actions/dockerfile-linting/Dockerfile # || true
+hadolint ./.github/actions/generate-svg/Dockerfile
 hadolint ./.github/actions/js-linting/Dockerfile
 hadolint ./.github/actions/json-linting/Dockerfile
 hadolint ./.github/actions/react-linting/Dockerfile

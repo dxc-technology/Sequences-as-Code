@@ -19,6 +19,7 @@ cd "$GITHUB_WORKSPACE" || exit
 echo "--> check shell script files using shellcheck"
 
 shellcheck --shell=bash  ./.github/actions/dockerfile-linting/entrypoint.sh
+shellcheck --shell=bash  ./.github/actions/generate-svg/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/js-linting/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/json-linting/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/react-linting/entrypoint.sh
