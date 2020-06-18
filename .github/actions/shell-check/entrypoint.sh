@@ -21,6 +21,7 @@ echo "--> check shell script files using shellcheck"
 shellcheck --shell=bash  ./.github/actions/dockerfile-linting/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/js-linting/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/json-linting/entrypoint.sh
+shellcheck --shell=bash  ./.github/actions/react-linting/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/shell-check/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/uml-validation/entrypoint.sh
 shellcheck --shell=bash  ./.github/actions/yaml-linting/entrypoint.sh
