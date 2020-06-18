@@ -65,6 +65,24 @@ jobs:
         uses: actions/checkout@v2
       - name: React code linting
         uses: ./.github/actions/react-linting
+  react-testing:
+    name: react-testing
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code testing
+        uses: ./.github/actions/react-testing
+  react-code-coverage:
+    name: react-code-coverage
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code test coverage
+        uses: ./.github/actions/react-code-coverage
   validate-JSON-schema:
     name: validate-JSON-schema
     # needs: code-linting
