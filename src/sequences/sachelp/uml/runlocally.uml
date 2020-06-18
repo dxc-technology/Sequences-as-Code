@@ -1,0 +1,28 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Run an instance of SaC on your local machine
+
+end title
+
+start
+:Start;
+note left
+  When creating sequences you may want to run the application locally to test them.
+end note
+:Open a terminal session;
+:Go to your cloned copy of your dedicated instance of SaC;
+note left
+ Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+end note
+:Lint to verify react code is syntactically correct - npm run lint;
+:Run unit tests - npm test;
+:Verify test coverage - npm run coverage;
+:Run locally - npm start;
+: application should be available at [[http://localhost:3000{Right click to open the Local Instance in a new window or a new tab} http://localhost:3000]];
+note right
+  Assuming of course the linting and testing was successful.
+end note
+stop
+@enduml

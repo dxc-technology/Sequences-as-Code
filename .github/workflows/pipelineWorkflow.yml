@@ -1,0 +1,106 @@
+---
+name: Pipeline - Workflow
+'on':
+  - push
+jobs:
+  spell-check:
+    name: markdown spell check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Run PySpelling as a GitHub action
+        uses: sbates130272/spellcheck-github-actions@v0.6.0
+  dockerfile-linting:
+    name: dockerfile-linting
+    # needs: spell-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Dockerfile linting
+        uses: ./.github/actions/dockerfile-linting
+  yaml-linting:
+    name: yaml-linting
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: YAML linting
+        uses: ./.github/actions/yaml-linting
+  shell-check:
+    name: shell-check
+    # needs: spell-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Shell Check
+        uses: ./.github/actions/shell-check
+  js-linting:
+    name: js-linting
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: JS code linting
+        uses: ./.github/actions/js-linting
+  json-linting:
+    name: json-linting
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: JSON code linting
+        uses: ./.github/actions/json-linting
+  react-linting:
+    name: react-linting
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code linting
+        uses: ./.github/actions/react-linting
+  react-testing:
+    name: react-testing
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code testing
+        uses: ./.github/actions/react-testing
+  react-code-coverage:
+    name: react-code-coverage
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code test coverage
+        uses: ./.github/actions/react-code-coverage
+  validate-JSON-schema:
+    name: validate-JSON-schema
+    # needs: code-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Validate JSON Schema
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: /src/missions.schema.json
+          INPUT_JSONS: ./src/missions.json
+  uml-validation:
+    name: uml-validation
+    # needs: validate-JSON-schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Validate UML
+        uses: ./.github/actions/uml-validation

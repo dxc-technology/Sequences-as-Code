@@ -1,0 +1,24 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Publishing your mission(s) and sequence(s)
+
+end title
+
+start
+:Start;
+:Open a terminal session;
+:Go to your cloned copy of your dedicated instance of SaC;
+note left
+ Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+end note
+:Verify the homepage value in the package.json file is set to the address of the repository for your instance of SaC;
+note right
+  The package.json file is located in the root folder.
+end note
+:Ensure all changes have been saved, committed and merged;
+:If the pipeline hasn't deployed your site, deploy it manually by running the command npm run deploy;
+:Site will be published to [[https://github.com/pages/your_organization/your_repository https://github.com/pages/your_organization/your_repository]];
+stop
+@enduml
