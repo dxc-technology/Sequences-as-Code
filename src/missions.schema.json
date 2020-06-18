@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "title": {
+        "type": "string"
+      },
+      "tagline": {
+        "type": "string"
+      },
+      "missions": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "navlink": {
+                "type": "string"
+              },
+              "component": {
+                "type": "string"
+              },
+              "sequences": {
+                "type": "array",
+                "items": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "heading": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "umltags": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "heading",
+                      "description",
+                      "umltags",
+                      "url"
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "navlink",
+              "component",
+              "sequences"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "tagline",
+      "missions"
+    ]
+  }

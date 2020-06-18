@@ -1,0 +1,16 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Overview
+
+end title
+
+(*) -right-> [<i>Start</i>] "Create Instance of SaC"
+"Create Instance of SaC" -down-> [Create dedicated repository for new SaC Instance\nConfigure new repository] "Fork and Clone"
+"Fork and Clone" -down->[Fork new repository\nClone\nConfigure repository and contents] "Missions"
+"Missions" -right-> [Add missions to mission.json\nCreate Mission Folders] "Sequences"
+"Sequences" -down-> [Add sequences to missions in mission.json\nCreate UML diagrams\nGenerate SVG files] "Publish"
+"Publish" -left-> [Commit code to GitHub\nVerify pipeline is green] "Consume"
+"Consume" -down-> [Browse to repos'\nGitHub pages site\nhttps://github.com/pages/your_organisation/your_repository]  (*)
+@enduml

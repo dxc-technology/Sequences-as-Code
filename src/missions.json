@@ -1,0 +1,93 @@
+{
+    "id": 1,
+    "title": "SaC",
+    "tagline": "Sequences as Code",
+    "missions": [
+        {
+            "id": 1,
+            "title": "yourmission",
+            "navlink": "Your Mission",
+            "component": "Your mission",
+            "sequences": [
+                {
+                    "id": 1,
+                    "heading": "",
+                    "description": "This mission will self destruct in 5 seconds",
+                    "umltags": [ "mission", "getting started", "placeholder", "hello", "world", "start" ],
+                    "url": "yourmission.svg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "sachelp",
+            "navlink": "Help",
+            "component": "Help",
+            "sequences": [
+                {
+                    "id": 1,
+                    "heading": "Getting Started",
+                    "description": "Overview",
+                    "umltags": [ "fork", "clone", "instance", "uml", "svg", "overview" ],
+                    "url": "overview.svg"
+                },
+                {
+                    "id": 2,
+                    "heading": "",
+                    "description": "Prerequisites for adding missions and sequences",
+                    "umltags": [ "docker", "git", "bash", "npm", "node.js", "plantuml" ],
+                    "url": "prerequisites.svg"
+                },
+                {
+                    "id": 3,
+                    "heading": "",
+                    "description": "Create new dedicated instance of SaC",
+                    "umltags": [ "dockerfile", "uml", "svg", "clone", "terminal" ],
+                    "url": "createnewinstance.svg"
+                },
+                {
+                    "id": 4,
+                    "heading": "",
+                    "description": "Update an instance of SaC following a new release",
+                    "umltags": [ "github", "pages", "npm", "release", "install", "uml", "svg", "clone", "terminal" ],
+                    "url": "updateinstance.svg"
+                },
+                {
+                    "id": 5,
+                    "heading": "",
+                    "description": "Run an instance of SaC on your local machine",
+                    "umltags": [ "localhost", "lint", "test", "coverage", "npm", "start", "3000", "terminal" ],
+                    "url": "runlocally.svg"
+                },
+                {
+                    "id": 6,
+                    "heading": "missions",
+                    "description": "Adding a new mission",
+                    "umltags": [ "mission", "generatesvg", "sh", "json", "sequence" ],
+                    "url": "mission.svg"
+                },
+                {
+                    "id": 7,
+                    "heading": "Sequences",
+                    "description": "Adding a new sequence",
+                    "umltags": [ "mission", "generatesvg", "sh", "json", "sequence", "svg", "uml" ],
+                    "url": "sequence.svg"
+                },
+                {
+                    "id": 8,
+                    "heading": "Publish",
+                    "description": "Publishing your mission(s) and sequence(s)",
+                    "umltags": [ "package", "deploy", "pipeline", "json", "npm" ],
+                    "url": "publish.svg"
+                }                ,
+                {
+                    "id": 9,
+                    "heading": "Search",
+                    "description": "Searching for mission(s) and sequence(s)",
+                    "umltags": [ "search", "mission", "sequence", "json", "uml", "title", "keyword" ],
+                    "url": "search.svg"
+                }
+            ]
+        }
+    ]
+}
