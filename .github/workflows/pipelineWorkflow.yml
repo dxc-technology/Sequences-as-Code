@@ -103,14 +103,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: generated-SVG-files
-          path: ${{ github.workspace }}/src/sequences/**/images/*.svg
+          path: ./src/sequences/**/images/*.svg
         env:
           PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload SVG root images
         uses: actions/upload-artifact@v2
         with:
           name: generated-SVG-files
-          path: ${{ github.workspace }}/images/*.svg
+          path: ./images/*.svg
         env:
           PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   commit-SVG:
