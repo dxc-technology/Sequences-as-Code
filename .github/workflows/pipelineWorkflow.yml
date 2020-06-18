@@ -106,10 +106,10 @@ jobs:
           path: ./src/sequences/**/images/*.svg
         env:
           PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload SVG root images
+      - name: Upload generated SVG base images
         uses: actions/upload-artifact@v2
         with:
-          name: generated-SVG-files
+          name: generated-SVG-base-images
           path: ./images/*.svg
         env:
           PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -120,10 +120,16 @@ jobs:
     steps:
       - name: Check out code.
         uses: actions/checkout@v2
-      - name: Commit previously generated SVG files
+      - name: Download previously generated SVG files
         uses: actions/download-artifact@v2
         with:
           name: generated-SVG-files
+          path: ./src/sequences
+      - name: Download previously generated SVG base images
+        uses: actions/download-artifact@v2
+        with:
+          name: generated-SVG-base-images
+          path: ./images
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
