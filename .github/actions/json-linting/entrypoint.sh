@@ -20,6 +20,6 @@ echo "--> JSON Linting"
 
 jsonlint eslintConfig.json
 
-jsonlint /src/missions.schema.json
+jsonlint ./src/missions.schema.json
 
-jsonlint /src/missions.json
+jsonlint ./src/missions.json
