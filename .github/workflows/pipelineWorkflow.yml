@@ -103,7 +103,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: generated-SVG-files
-          path: ${{ github.workspace }}/*.svg
+          path: ${{ github.workspace }}/src/sequences/**/images/*.svg
+        env:
+          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload SVG root images
+        uses: actions/upload-artifact@v2
+        with:
+          name: generated-SVG-files
+          path: ${{ github.workspace }}/images/*.svg
         env:
           PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   commit-SVG:
@@ -123,7 +130,7 @@ jobs:
           author_name: "tom-halpin"
           author_email: "tom_halpin@hotmail.com"
           message: "Committing workflow generated SVG files"
-          add: "*.svg"
+          add: "--all"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   react-testing:
