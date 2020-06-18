@@ -1,9 +1,11 @@
+br
 CHANGELOG
 CRA
 Dbased
 Dockerfile
 dockerized
 dxc
+ESLint
 facebook
 fname
 GitHub
@@ -19,10 +21,13 @@ generatesvg
 gh
 gitname
 http
+io
 learningpyramid
 localhost
 md
 mdspell
+minified
+minify
 npm
 ntl
 organisation
@@ -34,8 +39,10 @@ png
 PR
 PRs
 PySpelling
+reactjs
 README
 Readme
+repo
 Repo
 SaC
 sachelp
@@ -48,6 +55,7 @@ SVG
 svg
 uml
 validateJSONSchema
+webpack
 www
 yaml
 yml
