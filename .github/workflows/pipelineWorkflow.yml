@@ -47,8 +47,6 @@ jobs:
         uses: actions/checkout@v2
       - name: JS code linting
         uses: ./.github/actions/js-linting
-        env:
-          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   json-linting:
     name: json-linting
     # needs: dockerfile-linting
@@ -58,8 +56,15 @@ jobs:
         uses: actions/checkout@v2
       - name: JSON code linting
         uses: ./.github/actions/json-linting
-        env:
-          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  react-linting:
+    name: react-linting
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code linting
+        uses: ./.github/actions/react-linting
   validate-JSON-schema:
     name: validate-JSON-schema
     # needs: code-linting
