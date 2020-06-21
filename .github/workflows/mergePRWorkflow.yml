@@ -44,7 +44,19 @@ jobs:
     steps:
       - name: Check out code.
         uses: actions/checkout@v2
+        with:
+          ref: 'sac01'
       - name: Deploy SaC Hashed Images
-        uses: ./.github/actions/deploy-sac-hashed-images
+        shell: bash
+        run: |
+          echo "fetching the sac hashed images from the images folder of the master branch into the sac01 branch"
+          git checkout remotes/origin/master -- images
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: "tom-halpin"
+          author_email: "tom_halpin@hotmail.com"
+          message: "Deployed SaC Hashed Images"
+          add: "-all"
         env:
-          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
