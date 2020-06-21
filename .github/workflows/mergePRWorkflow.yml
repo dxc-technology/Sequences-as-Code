@@ -45,7 +45,7 @@ jobs:
       - name: Check out code.
         uses: actions/checkout@v2
         with:
-          ref: sac01
+          fetch-depth: 0
       - name: Deploy SaC Hashed Images
         shell: bash
         run: |
