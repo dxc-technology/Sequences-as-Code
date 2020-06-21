@@ -46,13 +46,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: sac01
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy SaC Hashed Images
         shell: bash
         run: |
           echo "fetching the sac hashed images from the images folder of the master branch into the sac01 branch"
-          git checkout remotes/origin/master -- images
+          git branch -a
+          git checkout master -- images
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
