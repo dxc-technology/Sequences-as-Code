@@ -1,9 +1,10 @@
 ---
 name: Code Commit - Workflow
-'on':
+on:
+  # Trigger the workflow on push to any branch except master
   push:
     branches:
-      - '!master'   # excludes master
+      - '!master'
 jobs:
   spell-check:
     name: markdown spell check
