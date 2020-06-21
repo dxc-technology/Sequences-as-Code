@@ -1,0 +1,51 @@
+---
+name: Merge PR Workflow
+'on':
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  react-testing:
+    name: react-testing
+    needs: commit-SVG
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code testing
+        uses: ./.github/actions/react-testing
+  react-code-coverage:
+    name: react-code-coverage
+    # needs: dockerfile-linting
+    runs-on: ubuntu-latest
+    needs: react-testing
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code test coverage
+        uses: ./.github/actions/react-code-coverage
+#  react-deployment:
+#    name: react-deployment
+#    # needs: dockerfile-linting
+#    runs-on: ubuntu-latest
+#    needs: react-code-coverage
+#    steps:
+#      - name: Check out code.
+#        uses: actions/checkout@v2
+#      - name: React deployment
+#        uses: ./.github/actions/react-deployment
+  deploy-sac-hashed-images:
+    name: deploy-sac-hashed-images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Deploy SaC Hashed Images
+        uses: ./.github/actions/deploy-sac-hashed-images
+        env:
+          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
