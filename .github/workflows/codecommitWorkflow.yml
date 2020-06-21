@@ -3,8 +3,8 @@ name: Code Commit - Workflow
 'on':
   # Trigger the workflow on push to any branch except master
   push:
-    branches:
-      - '!master'
+#    branches:
+#      - '!master'
 jobs:
   spell-check:
     name: markdown spell check
