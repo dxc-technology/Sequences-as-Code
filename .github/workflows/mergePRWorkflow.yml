@@ -6,9 +6,6 @@ name: Merge PR Workflow
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 jobs:
   react-testing:
     name: react-testing
