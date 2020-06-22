@@ -29,7 +29,6 @@ jobs:
         uses: ./.github/actions/react-code-coverage
   react-deployment:
     name: react-deployment
-    # needs: dockerfile-linting
     runs-on: ubuntu-latest
     needs: react-code-coverage
     steps:
