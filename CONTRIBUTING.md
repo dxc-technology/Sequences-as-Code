@@ -24,7 +24,7 @@ We strive to process all pull requests as soon as possible and to provide constr
 
 If your pull request is not accepted at first, please try again after addressing the feedback you received.
 
-### How to create and submit a pull request:
+### How to create and submit a pull request
 
 * **Fork** the repository
 * Make **changes** on your local environment
