@@ -1,3 +1,12 @@
+---
+name: Issue template
+about: Issue template
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 <!--
   Please add an X to checkboxes which apply below
 -->
@@ -5,7 +14,7 @@
 
 ---
 
-# Question
+## Question
 
 | Question              |
 |--------------------------------------------|
