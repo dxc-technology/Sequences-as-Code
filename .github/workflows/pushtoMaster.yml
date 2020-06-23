@@ -1,8 +1,7 @@
 ---
-name: Merge PR Workflow
+name: Push to Master
 'on':
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
+  # Trigger the workflow on push to the master branch
   push:
     branches:
       - master
