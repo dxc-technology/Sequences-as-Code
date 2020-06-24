@@ -4,7 +4,7 @@ Repository for SaC (Sequences as Code)
 
 ## Purpose
 
-The purpose of Sequences As Code (SaC) is to:
+The purpose of the Sequences As Code (SaC) application is to:
 
 - Provide a quick and efficient means of creating guided learning paths in the form of sequences.
 
@@ -28,19 +28,17 @@ Potential use cases include:
 
 - Documenting workflows or commonly repeated tasks.
 
-These use cases support the concept of the learning pyramid based on work from the [National Training Laboratories Institute](https://www.ntl.org/) which suggests that some forms of learning lead to better learning experiences and thus better retention outcomes than others.
-
-![Learning Pyramid](./images/learningpyramid.png)
+These use cases support the concept of the [learning pyramid](https://www.educationcorner.com/the-learning-pyramid.html) developed by the [National Training Laboratories Institute](https://www.ntl.org/). The learning pyramid suggests that some forms of learning lead to better learning experiences and thus better retention outcomes than others.
 
 ## Creating Sequences
 
-Sequences are created using UML and grouped together as Missions.
+Using SaC sequences are created as UML and grouped together as Missions.
 
-Details on how to create the missions and sequences can be found in the [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) guide.
+Details on how to create the missions and sequences can be found in the SaC [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) mission and associated sequences.
 
 ### Creating Sequences - Automatically
 
-The option to convert the UML files to SVG is offered on every code commit from the continuous integration pipeline.
+The option to convert the UML files to SVG is offered on every code commit from the continuous integration GitHub Action.
 
 ### Creating Sequences - Manually
 
@@ -54,15 +52,9 @@ To generate the SVG files for a repository created from a release on the [Sequen
 
 The `./generatesvg.sh` script uses PlantUML a dockerized command line utility to convert UML files to SVG files. The script requires docker to be installed and running locally.
 
-**Tip 1** `./generatesvg.sh` will generate SVG files for all the UML files it finds. This can take some and is not necessary for the [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) files. Prior to running `./generatesvg.sh` you should adjust the
+**Tip 1** `./generatesvg.sh` will generate SVG files for all the UML files it finds in the mission subfolders of the folder `src/sequences`. This may take some and should not be necessary for the [sachelp](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) mission. Prior to running `./generatesvg.sh` you can adjust the script to ensure it only finds and processes the UML files you need processed.
 
-```bash
-find ./src/sequences/*/uml -type f -name '*.uml'|while read fname; do
-```
-
-to ensure it only finds and processes the UML files you need processed.
-
-**Tip 2** When running the `./generatesvg.sh` script you can ignore any WARNINGS reported. In the event of an ERROR unfortunately no details are provided by `think/plantuml` to view the specific error details you can use [PlantText](https://www.planttext.com/).
+**Tip 2** When running the `./generatesvg.sh` script you can ignore any WARNINGS reported. In the event of an ERROR unfortunately no details are provided by `think/plantuml`, so to view the specific error details you can use [PlantText](https://www.planttext.com/).
 
 ## Linking Sequences to Sequences
 
@@ -90,7 +82,7 @@ sequence.image.svg
 
 ## React Bootstrapped Readme.md
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The bootstrapped README.md is available at[CRA-README.md](./CRA-README.md).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). For your convenience the bootstrapped README.md is available at[CRA-README.md](./CRA-README.md).
 
 ## Working Locally
 

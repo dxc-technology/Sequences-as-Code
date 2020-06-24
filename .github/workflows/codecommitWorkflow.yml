@@ -114,7 +114,7 @@ jobs:
         uses: EndBug/add-and-commit@v4
         with:
           author_name: "tom-halpin"
-          author_email: "tom_halpin@hotmail.com"
+          author_email: "tom.halpin@dxc.com"
           message: "Committing workflow generated SVG files"
           add: "--all"
         env:
