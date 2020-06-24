@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #set -e
 #set -x
@@ -21,11 +21,11 @@ echo "--> UML Validation"
 #find . -name "*.uml" -exec java -jar /plantuml.jar -checkonly -v '{}' \;
 
 # find the mission directories
-find src/sequences -maxdepth 1 -type d | while read dname; do
+find src/sequences -maxdepth 1 -type d | while read -r dname; do
   if [ "$dname" != "src/sequences" ]; then
-    echo "Processing mission:" $dname
+    echo "Processing mission:" "$dname"
     # validate each sequence in each mission as valid UML
-    java -jar /plantuml.jar --checkonly -v ${dname}/uml/*.uml
+    java -jar /plantuml.jar --checkonly -v "${dname}"/uml/*.uml
   fi
 done
 
