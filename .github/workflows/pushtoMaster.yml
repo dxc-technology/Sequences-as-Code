@@ -1,5 +1,5 @@
 ---
-name: Push to Master
+name: Push to Master - Workflow
 'on':
   # Trigger the workflow on push to the master branch
   push:
