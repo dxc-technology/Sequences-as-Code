@@ -1,7 +1,7 @@
 ---
 name: Push to Master - Workflow
 'on':
-  # Trigger the workflow on push to the master branch
+  # Trigger this workflow on a push to the master branch
   push:
     branches:
       - master
@@ -51,7 +51,7 @@ jobs:
         uses: EndBug/add-and-commit@v4
         with:
           author_name: "tom-halpin"
-          author_email: "tom_halpin@hotmail.com"
+          author_email: "tom.halpin@dxc.com"
           message: "Deployed SaC Hashed Images"
           add: "-all"
         env:
