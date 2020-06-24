@@ -5,11 +5,13 @@ Dbased
 Dockerfile
 dockerized
 dxc
+educationcorner
 ESLint
 facebook
 fname
 GitHub
 github
+html
 https
 Javascript
 jenkins
@@ -51,6 +53,7 @@ sequentialJobs
 spellcheck
 SME's
 src
+subfolders
 SVG
 svg
 uml
