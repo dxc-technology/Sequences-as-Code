@@ -6,6 +6,66 @@ name: Push to Master - Workflow
     branches:
       - master
 jobs:
+  spell-check:
+    name: markdown spell check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Run PySpelling as a GitHub action
+        uses: sbates130272/spellcheck-github-actions@v0.6.0
+  super-linter:
+    # Job name
+    name: lint-code-base-using-super-linter
+    # Set the agent to run on
+    runs-on: ubuntu-latest
+    # Load all steps
+    steps:
+      # Checkout the code base
+      - name: Check out code
+        uses: actions/checkout@v2
+      # Run Linter against code base
+      - name: Lint code base
+        uses: docker://github/super-linter:v2.1.1
+        env:
+          VALIDATE_ALL_CODEBASE: true # will parse the entire repository and find all files to validate across all types. NOTE: When set to false, only new or edited files will be parsed for validation.
+          DEFAULT_BRANCH: master
+          VALIDATE_YAML: true
+          VALIDATE_JSON: true
+          VALIDATE_MD: true
+          VALIDATE_BASH: true # by default validates against POSIX rules, scripts using #!/bin/bash shebang
+          VALIDATE_JAVASCRIPT_ES: true # (Utilizing: eslint)
+          VALIDATE_DOCKER: true
+          ACTIONS_RUNNER_DEBUG: false # Flag to enable additional information about the linter, versions, and additional output.
+          DISABLE_ERROR: false # Flag to have the linter complete with exit code 0 even if errors were detected.
+          DEFAULT_WORKSPACE: /tmp/lint
+  react-linting:
+    name: react-linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: React code linting
+        uses: ./.github/actions/react-linting
+  validate-JSON-schema:
+    name: validate-JSON-schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Validate JSON Schema
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: /src/missions.schema.json
+          INPUT_JSONS: ./src/missions.json
+  uml-validation:
+    name: uml-validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Validate UML
+        uses: ./.github/actions/uml-validation
   react-testing:
     name: react-testing
     runs-on: ubuntu-latest
