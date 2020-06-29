@@ -39,14 +39,6 @@ jobs:
           ACTIONS_RUNNER_DEBUG: false # Flag to enable additional information about the linter, versions, and additional output.
           DISABLE_ERROR: false # Flag to have the linter complete with exit code 0 even if errors were detected.
           DEFAULT_WORKSPACE: /tmp/lint
-  react-linting:
-    name: react-linting
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: React code linting
-        uses: ./.github/actions/react-linting
   validate-JSON-schema:
     name: validate-JSON-schema
     runs-on: ubuntu-latest
@@ -66,34 +58,34 @@ jobs:
         uses: actions/checkout@v2
       - name: Validate UML
         uses: ./.github/actions/uml-validation
-  react-testing:
-    name: react-testing
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: React code testing
-        uses: ./.github/actions/react-testing
-  react-code-coverage:
-    name: react-code-coverage
-    runs-on: ubuntu-latest
-    needs: react-testing
-    steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: React code test coverage
-        uses: ./.github/actions/react-code-coverage
   react-deployment:
-    name: react-deployment
     runs-on: ubuntu-latest
-    needs: react-code-coverage
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-#      - name: React deployment
-#        uses: ./.github/actions/react-deployment
-  deploy-sac-hashed-images:
-    name: deploy-sac-hashed-images
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Packages
+      run: npm install
+    - name: Lint application
+      run: npm run lint
+    - name: Test application
+      run: CI=test npm run test
+    - name: Run test coverage report
+      run: npm run coverage
+#    - name: Build application
+#      run: npm run build
+#    - name: Deploy to gh-pages
+#      uses: peaceiris/actions-gh-pages@v3
+#      with:
+#        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+#        publish_dir: ./build
+  deploy-images:
+    name: deploy-images
     needs: react-deployment
     runs-on: ubuntu-latest
     steps:
@@ -101,18 +93,25 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Deploy SaC Hashed Images
+      - name: Deploy Images
         shell: bash
         run: |
-          echo "fetching the sac hashed images from the images folder of the master branch into the sac01 branch"
+          echo "fetching the images from the images folder of the master branch into the images folder of the gh-pages branch"
           git branch -a
-          git checkout master -- images
+          #git checkout gh-pages
+          # checkout the images folder from the master branches
+          # -- indicates do not interpret any more arguments as command options.
+          # and stage the files
+          #git checkout master -- images
+          git status
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
           author_name: "tom-halpin"
-          author_email: "tom.halpin@dxc.com"
-          message: "Deployed SaC Hashed Images"
-          add: "-all"
+          author_email: "tom_halpin@hotmail.com"
+          message: "Deployed Images"
+          add: "--all"
+          #ref: "gh-pages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

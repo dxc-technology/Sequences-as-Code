@@ -39,14 +39,6 @@ jobs:
           ACTIONS_RUNNER_DEBUG: false # Flag to enable additional information about the linter, versions, and additional output.
           DISABLE_ERROR: false # Flag to have the linter complete with exit code 0 even if errors were detected.
           DEFAULT_WORKSPACE: /tmp/lint
-  react-linting:
-    name: react-linting
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: React code linting
-        uses: ./.github/actions/react-linting
   validate-JSON-schema:
     name: validate-JSON-schema
     runs-on: ubuntu-latest
@@ -58,6 +50,25 @@ jobs:
         env:
           INPUT_SCHEMA: /src/missions.schema.json
           INPUT_JSONS: ./src/missions.json
+  react-linting-and-testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Packages
+      run: npm install
+    - name: Lint application
+      run: npm run lint
+    - name: Test application
+      run: CI=test npm run test
+    - name: Run test coverage report
+      run: npm run coverage
   uml-validation:
     name: uml-validation
     runs-on: ubuntu-latest
@@ -119,21 +130,3 @@ jobs:
           add: "--all"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  react-testing:
-    name: react-testing
-    needs: commit-SVG
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: React code testing
-        uses: ./.github/actions/react-testing
-  react-code-coverage:
-    name: react-code-coverage
-    runs-on: ubuntu-latest
-    needs: react-testing
-    steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: React code test coverage
-        uses: ./.github/actions/react-code-coverage
