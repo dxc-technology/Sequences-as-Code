@@ -1,6 +1,6 @@
 ---
 name: Issue report
-about: Create a report to help us improve
+about: Create an issue report to help us improve
 title: ''
 labels: ''
 assignees: ''
