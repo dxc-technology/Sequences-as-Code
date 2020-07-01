@@ -52,6 +52,7 @@ jobs:
           INPUT_JSONS: ./src/missions.json
   uml-validation:
     name: uml-validation
+    needs: super-linter
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.
@@ -60,6 +61,7 @@ jobs:
         uses: ./.github/actions/uml-validation
   react-deployment:
     runs-on: ubuntu-latest
+    needs: uml-validation
     strategy:
       matrix:
         node-version: [12.x]
