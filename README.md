@@ -1,6 +1,6 @@
 # SaC (Sequences as Code) - README.md
 
-Repository for SaC (Sequences as Code)
+Repository for SaC (Sequences as Code).
 
 ## Purpose
 
@@ -44,14 +44,11 @@ We welcome all contributions please refer to [CONTRIBUTING.MD](/CONTRIBUTING.md)
 
 ## Issues
 
-If you experience some problems with the existing scenarios, please open an
-[issue](https://github.com/dxc-technology/Sequences-as-Code/issues/new/choose)
-and let us know about them.
+If you experience some problems with the existing scenarios, please open an [issue](https://github.com/dxc-technology/Sequences-as-Code/issues/new/choose) and let us know about them.
 
 ## License
 
-This project is licensed under the Mozilla Public License Version 2.0 - see
-the [LICENSE](LICENSE) file for details.
+This project is licensed under the Mozilla Public License Version 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## Create React App - Bootstrapped Readme.md
 
