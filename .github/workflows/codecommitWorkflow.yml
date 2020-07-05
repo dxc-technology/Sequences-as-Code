@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check out code.
         uses: actions/checkout@v2
-      - name: Run PySpelling as a GitHub action
+      - name: Spelling check via PySpelling
         uses: sbates130272/spellcheck-github-actions@v0.6.0
   super-linter:
     # Job name
@@ -45,10 +45,10 @@ jobs:
     steps:
       - name: Check out code.
         uses: actions/checkout@v2
-      - name: Validate JSON Schema
+      - name: Validate src/mission.json against JSON Schema
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: /src/missions.schema.json
+          INPUT_SCHEMA: ./src/missions.schema.json
           INPUT_JSONS: ./src/missions.json
   react-linting-and-testing:
     runs-on: ubuntu-latest
@@ -71,6 +71,7 @@ jobs:
       run: npm run coverage
   uml-validation:
     name: uml-validation
+    needs: react-linting-and-testing
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.

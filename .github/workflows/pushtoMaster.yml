@@ -2,6 +2,7 @@
 name: Push to Master - Workflow
 'on':
   # Trigger this workflow on a push to the master branch
+  # Work runs all linter checks, and tests if they are successful it builds and deploys application
   push:
     branches:
       - master
@@ -12,7 +13,7 @@ jobs:
     steps:
       - name: Check out code.
         uses: actions/checkout@v2
-      - name: Run PySpelling as a GitHub action
+      - name: Spelling check via PySpelling
         uses: sbates130272/spellcheck-github-actions@v0.6.0
   super-linter:
     # Job name
@@ -45,7 +46,7 @@ jobs:
     steps:
       - name: Check out code.
         uses: actions/checkout@v2
-      - name: Validate JSON Schema
+      - name: Validate src/mission.json against JSON Schema
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
           INPUT_SCHEMA: ./src/missions.schema.json
@@ -98,11 +99,12 @@ jobs:
       - name: Deploy Images
         shell: bash
         run: |
-          echo "fetching the images from the images folder of the master branch into the images folder of the gh-pages branch"
+          echo "Following deployment of the gh-pages branch, need to fetching the images from the images folder of the master branch "
+          echo " into the images folder of the gh-pages branch. This is done to facilitate sequence to sequence links."
           git branch -a
           #git checkout gh-pages
-          # checkout the images folder from the master branches
-          # -- indicates do not interpret any more arguments as command options.
+          # checkout the images folder from the master branch
+          # the -- parameter indicates do not interpret any more arguments as command options.
           # and stage the files
           #git checkout master -- images
           git status
@@ -113,7 +115,7 @@ jobs:
           author_email: "tom_halpin@hotmail.com"
           message: "Deployed Images"
           add: "--all"
-          #ref: "gh-pages"
+          #ref: "gh-pages" # commit is to gh-pages branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
