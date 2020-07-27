@@ -13,7 +13,7 @@ jobs:
       - name: Check out code.
         uses: actions/checkout@v2
       - name: Spelling check via PySpelling
-        uses: sbates130272/spellcheck-github-actions@v0.6.0
+        uses: sbates130272/spellcheck-github-actions@v0.7.0
   super-linter:
     # Job name
     name: lint-code-base-using-super-linter
@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v2
       # Run Linter against code base
       - name: Lint code base
-        uses: docker://github/super-linter:v2.1.1
+        uses: docker://github/super-linter:v3.3.2
         env:
           VALIDATE_ALL_CODEBASE: true # will parse the entire repository and find all files to validate across all types. NOTE: When set to false, only new or edited files will be parsed for validation.
           DEFAULT_BRANCH: master
