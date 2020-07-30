@@ -1,0 +1,46 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Update an instance of SaC following a new release
+
+end title
+
+start
+:Start;
+:Open a terminal session;
+:Go to your cloned copy of your dedicated instance of SaC;
+note left
+ Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+end note
+:Back up your cloned files;
+:Get the updated version of SaC from the [[https://github.com/dxc-technology/Sequences-as-Code/releases{Right click to open in a new window or a new tab} Releases tab]] of the SaC repository;
+:Update the homepage value in the package.json file with the (case sensitive) address of your repository;
+note right
+  The base url for generated site needs to be set correctly for your missions and sequences to render.
+end note
+:Find and replace all references to the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]] with the address of your instance of the repository;
+note left
+  You can ignore the references in the sample uml and svg files as you presumably will be replacing those files.
+end note
+:Open a terminal session, go to your local folder and run <i>npm install</i>;
+note right
+  This is to install any new or updated dependencies in the local node_modules folder
+end note
+:Reapply your missions and sequences;
+note right
+  Re configure your missions and sequences in missions.json.
+  Re add your sequence uml and svg files to the appropriate sequences sub-folder.
+end note
+:Remove the sample mission and sequence, entitled Your mission, provided with the new release of the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]];
+note left
+  Delete the entry for yourmission from missions.json.
+  Delete the associated images/yourmission.svg and uml/yourmission.uml files from the sequences/yourmission folder.
+end note
+:Run unit tests;
+:Update any unit tests that need to be updated;
+:Commit your changes;
+:Deploy;
+:Verify your site is up and running. It should be available at [[https://github.com/pages/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories GitHub pages site]];;
+stop
+@enduml

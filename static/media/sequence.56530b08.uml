@@ -1,0 +1,45 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Adding a new sequence
+
+end title
+
+skinparam sequenceArrowColor Purple
+skinparam sequenceParticipantBorderColor Purple
+skinparam sequenceActorBorderColor Purple
+skinparam sequenceLifeLineBorderColor Purple
+actor User
+participant "Start" as A #FFA500
+participant "Go to Clone" as B
+participant "Add Sequence" as C
+participant "Mission.json" as D
+participant "Test" as E
+participant "Commit" as F
+participant "Deploy" as G #33ff00
+
+User -> A: Open a terminal session
+User -> B: Go to your cloned copy of your dedicated instance of SaC
+note right
+   Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+end note
+User -> C: Create Sequence diagram and add to UML folder
+note right
+  [[https://www.planttext.com/{Right click to open PlantUml in a new window or a new tab} PlantText]] can be used to create UML files.
+  [[https://real-world-plantuml.com{Right click to open Real World PlantUml in a new window or a new tab} Real World PlantUml]] provides a wide set of UML samples.
+end note
+User -> D: Add sequence to designated mission in mission.json
+User -> E: Update unit tests if necessary;
+note right
+  [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]] was provided with some basic unit tests
+  As you add content be sure to ensure the test coverage is maintained
+end note
+User -> F: Commit changes and verify pipeline is green;
+note right
+  The continuous integration pipeline automatically generates the SVG images from the UML files.
+  If you want to generate the SVG files locally you can run the generatesvg.sh script to generate the SVG images from the sequence UML files;
+end note
+User -> G: Once changes are merged. If the pipeline hasn't deployed your site, deploy it manually by running the command npm run deploy;
+
+@enduml
