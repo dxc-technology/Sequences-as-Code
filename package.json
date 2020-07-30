@@ -2,7 +2,7 @@
   "name": "sac",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/dxc-technology/Sequences-as-Code",
+  "homepage": "https://dxc-technology.github.io/Sequences-as-Code/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
