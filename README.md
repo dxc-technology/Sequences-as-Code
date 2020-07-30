@@ -1,10 +1,10 @@
 # SaC (Sequences as Code) - README.md
 
-Repository for SaC (Sequences as Code).
+Repository for [SaC (Sequences as Code)](https://dxc-technology.github.io/Sequences-as-Code/#/).
 
 ## Purpose
 
-The purpose of the Sequences As Code (SaC) application is to:
+The purpose of the [SaC (Sequences as Code)](https://dxc-technology.github.io/Sequences-as-Code/#/) application is to:
 
 - Provide a quick and efficient means of creating guided learning paths in the form of sequences.
 
