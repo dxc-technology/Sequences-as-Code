@@ -36,7 +36,7 @@ See a [history of the changes](CHANGELOG.md) to **SaC (Sequences as Code)**.
 
 ## Documentation
 
-For instructions on how to perform common SaC tasks please see the [documentation](./docs/README.md).
+For instructions on how to perform common **SaC (Sequences as Code)** tasks please see the [documentation](./docs/README.md).
 
 ## Contributing
 
@@ -44,7 +44,7 @@ We welcome all contributions please refer to [CONTRIBUTING.MD](/CONTRIBUTING.md)
 
 ## Issues
 
-If you experience some problems with the existing scenarios, please open an [issue](https://github.com/dxc-technology/Sequences-as-Code/issues/new/choose) and let us know about them.
+If you experience problems with the application including the provided sequences, please open an [issue](https://github.com/dxc-technology/Sequences-as-Code/issues/new/choose) and let us know about them.
 
 ## License
 
@@ -52,4 +52,4 @@ This project is licensed under the Mozilla Public License Version 2.0 - see the 
 
 ## Create React App - Bootstrapped Readme.md
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). For your convenience the bootstrapped README.md is available at[CRA-README.md](./CRA-README.md).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). For your convenience the bootstrapped README.md is available at [CRA-README.md](./CRA-README.md).

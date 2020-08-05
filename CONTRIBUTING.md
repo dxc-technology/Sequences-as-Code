@@ -17,7 +17,7 @@ We value and welcome all contributions including
 Contributions can be made to the improve the base repository.
 
 * The way to collaborate and work on the project is via GitHub: [github.com/dxc-technology/Sequences-as-Code](https://github.com/dxc-technology/Sequences-as-Code)
-* For issues, bug fixes or adding new features, please create and submit a pull request
+* For documentation updates, bug fixes or the addition of new features please create and submit a pull request
 * For raising an issue or a defect, please open a [new github issue](https://github.com/dxc-technology/Sequences-as-Code/issues/new)
 
 ### Your Missions and Sequences
@@ -30,7 +30,7 @@ For instructions on how to
 * Add your missions and sequences
 * Perform common SaC tasks please
 
-see the [documentation](./docs/README.md).
+see the **SaC (Sequences as Code)** [documentation](./docs/README.md).
 
 ## Pull Requests
 
@@ -42,11 +42,13 @@ If your pull request is not accepted at first, please try again after addressing
 
 ### How to create and submit a pull request
 
-* **Fork** the repository
-* Make **changes** on your local environment
+* **Fork** the [SaC (Sequences as Code)](https://dxc-technology.github.io/Sequences-as-Code/#/) repository
+* Make **changes** in your local environment
 * **Test** your changes
-* Submit **Pull Request** to the master repository including a brief description of the request. The **Pull Request** should include enough detail to enable the owner of the repository understand and process the request.
+* Submit a **Pull Request** to the master repository including a brief description of the request. The **Pull Request** should include enough detail to enable the owner of the repository understand and process the request.
 * **@Mention** the team/team members in the comment section so the notification is sent. This alerts the team members of the need to review the code.
 * Wait for the repo admins to review the changes and provide **feedback**.
 
-As noted above please do not submit a pull request with your dedicated missions and sequences, these should be added to a dedicated instance of SaC. For details on how to stand up a dedicated instance see the [documentation](./docs/README.md).
+As **noted** above please do not submit a pull request containing your dedicated missions and sequences, these should be added to a dedicated instance of SaC.
+
+For details on how to stand up a dedicated instance of SaC refer to the **SaC (Sequences as Code)** [documentation](./docs/README.md).
