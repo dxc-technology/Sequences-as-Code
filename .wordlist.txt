@@ -3,6 +3,7 @@ Changelog
 CHANGELOG
 CRA
 Dbased
+dev
 Dockerfile
 dockerized
 dxc
