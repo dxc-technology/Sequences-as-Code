@@ -6,7 +6,7 @@ The following instructions describe how to perform common tasks related to **SaC
 
 When using SaC sequences are created as UML and grouped together as Missions.
 
-Details on how to create missions and sequences can be found in the SaC [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) mission and it's associated sequences.
+Details on how to create missions and sequences can be found in the SaC [Help](https://dxc-technology.github.io/Sequences-as-Code/#/sachelp) mission and it's associated sequences.
 
 ### Creating Sequences - Automatically
 
@@ -24,7 +24,7 @@ To generate the SVG files for a repository created from a release of [Sequences 
 
 The `./generatesvg.sh` script uses PlantUML a dockerized command line utility to convert UML files to SVG files. The `./generatesvg.sh` script requires docker to be installed and running locally.
 
-**Tip 1** `./generatesvg.sh` will generate SVG files for all the UML files it finds in the mission subfolders of the folder `src/sequences`. This may take some time and should not be necessary for the SaC [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) mission. Prior to running `./generatesvg.sh` you can adjust the script to ensure it only finds and processes the UML files you need processed.
+**Tip 1** `./generatesvg.sh` will generate SVG files for all the UML files it finds in the mission subfolders of the folder `src/sequences`. This may take some time and should not be necessary for the SaC [Help](https://dxc-technology.github.io/Sequences-as-Code/#/sachelp) mission. Prior to running `./generatesvg.sh` you can adjust the script to ensure it only finds and processes the UML files you need processed.
 
 **Tip 2** When running the `./generatesvg.sh` script you can ignore any WARNINGS reported. In the event of an ERROR unfortunately no details are provided by `think/plantuml`. If you need to view specific error details you can use [PlantText](https://www.planttext.com/).
 
@@ -86,8 +86,8 @@ The contents and changes in each release are documented in the [CHANGELOG.md](ht
 
 ## Stand up a new Instance of SaC
 
-To stand up a new instance of SaC follow the instructions in the *Create new dedicated instance of SaC* sequence in the SaC [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) mission.
+To stand up a new instance of SaC follow the instructions in the *Create new dedicated instance of SaC* sequence in the SaC [Help](https://dxc-technology.github.io/Sequences-as-Code/#/sachelp) mission.
 
 ## Update an Instance of SaC
 
-To update an instance of SaC follow the instructions in the *Update an instance of SaC with a new release* sequence in the SaC [Help](https://github.com/pages/dxc-technology/Sequences-as-Code/#/sachelp) mission.
+To update an instance of SaC follow the instructions in the *Update an instance of SaC with a new release* sequence in the SaC [Help](https://dxc-technology.github.io/Sequences-as-Code/#/sachelp) mission.
