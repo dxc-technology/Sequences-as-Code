@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Sequences-as-Code/precache-manifest.56e9b1039a5a776eae375076f008a1a1.js"
+  "/Sequences-as-Code/precache-manifest.22d8efcb09c29b086fc2d2161cd33a31.js"
 );
 
 self.addEventListener('message', (event) => {

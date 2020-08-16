@@ -1,0 +1,31 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Your Mission Example - This mission will self destruct in 5 seconds
+
+end title
+
+participant "Sequence Creator" as Creator #lightGreen
+participant "Init Repo \nFork, Clone \nCode, Commit \nCode, Commit \nSubmit PR \nMerge" as Develop #white
+participant  "Intended Audience" as Audience #orange
+
+== Code Sequences ==
+Creator -> Develop: Follow instructions in [[https://dxc-technology.github.io/Sequences-as-Code/#/sachelp{Right click to open Help in a new window or a new tab} Help -> Getting Started]] to start development;
+Creator -> Develop: Create dedicated instance of SaC by following the instructions in [[https://dxc-technology.github.io/Sequences-as-Code/#/sachelp{Right click to open Help in a new window or a new tab} SaC -> Help Missions]];
+Creator -> Develop: Add missions by following the instructions in [[https://dxc-technology.github.io/Sequences-as-Code/#/sachelp{Right click to open Help in a new window or a new tab} SaC -> Help Missions]];
+Creator -> Develop: Add sequences to missions by following the instructions in [[https://dxc-technology.github.io/Sequences-as-Code/#/sachelp{Right click to open Help in a new window or a new tab} Help -> Sequences]];
+== Publish ==
+Develop -> Audience: Publish your site by following the instructions in [[https://dxc-technology.github.io/Sequences-as-Code/#/sachelp{Right click to open Help in a new window or a new tab} Help -> Publish]];
+Develop -> Audience: Share your site with the intended audience;
+== Relax ==
+Creator -> Creator: Take a break;
+== Consume ==
+Audience -> Audience: Use Sequences
+== Open Source ==
+Audience -> Develop: Add and/or update Sequences via pull requests
+Develop -> Audience: Review PRs and publish updates site by following the instructions in [[https://dxc-technology.github.io/Sequences-as-Code/#/sachelp{Right click to open Help in a new window or a new tab} Help -> Publish]];
+== Relax ==
+Audience -> Audience: Take a break;
+== Consume ==
+@enduml
