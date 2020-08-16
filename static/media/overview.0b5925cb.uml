@@ -1,0 +1,39 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Overview
+
+end title
+
+actor Developer
+participant "Setup" as A #lightGreen
+participant "Develop Sequences" as B #white
+participant "Users" as C #orange
+
+Developer -> A: Create dedicated instance of SaC repository
+activate A
+
+Developer -> A: Fork and Clone new instance of SaC repository
+activate B
+
+A -> B: Add mission(s) to mission.json
+A--> B: Add sequences(s) to missions in mission.json
+A--> B: Create sequences in form of UML diagrams
+A--> B: Commit code
+A--> B: Submit PR
+activate C
+
+B--> C: Merge PR
+B--> C: Publish
+
+C--> C: Consume Sequences by browsing to \nGitHub pages site of new instance \nof SaC repository
+deactivate C
+
+B--> A: Sequences Published
+deactivate B
+
+A--> Developer: Done
+deactivate A
+
+@enduml

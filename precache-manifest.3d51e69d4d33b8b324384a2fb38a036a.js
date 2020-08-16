@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "70dacef972abcc9e9a74033eb0e8342f",
+    "revision": "ffcb9a309f4e8a2cfd1a11b329ada88f",
     "url": "/Sequences-as-Code/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sequences-as-Code/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "db1e48fa7ec9a198d282",
+    "revision": "4d846a893ec2fb245d40",
     "url": "/Sequences-as-Code/static/css/main.f229c110.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sequences-as-Code/static/js/2.d378994e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "db1e48fa7ec9a198d282",
-    "url": "/Sequences-as-Code/static/js/main.a60c3ef0.chunk.js"
+    "revision": "4d846a893ec2fb245d40",
+    "url": "/Sequences-as-Code/static/js/main.25d16f1a.chunk.js"
   },
   {
     "revision": "784749eb3244b31edba9",
@@ -52,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sequences-as-Code/static/media/mission.5d49881c.svg"
   },
   {
-    "revision": "622049c42eed375d96fde0b6c1d3f566",
-    "url": "/Sequences-as-Code/static/media/overview.622049c4.uml"
+    "revision": "0b5925cbad54f4440fc0bab12565ff13",
+    "url": "/Sequences-as-Code/static/media/overview.0b5925cb.uml"
   },
   {
-    "revision": "bd905da11952e280ea4eef890334687e",
-    "url": "/Sequences-as-Code/static/media/overview.bd905da1.svg"
+    "revision": "35ab4701f4cc1e830af1c58fa02a716d",
+    "url": "/Sequences-as-Code/static/media/overview.35ab4701.svg"
   },
   {
     "revision": "21c9700012003a5b9baa3f3159333c25",
