@@ -2,19 +2,27 @@
 
 title
 
-  <font color=purple><b>SaC Help</b></font> - Publishing your mission(s) and sequence(s)
+  <font color=purple><b>SaC Help</b></font> - Searching for mission(s) and sequence(s)
 
 end title
 
-start
-:There are two search options both available at [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories Search page]];
-:Search by keyword in sequence title and search by UML tag;
-note left
- It is not possible to search the UML code that the sequences are written in directly.
-end note
+actor Developer
+participant "Open Search Page" as A #lightGreen
+participant "Search by Keyword" as B #white
+participant "Search by Tag" as C #white
+participant "Review Results" as D #orange
+
+Developer -> A: Browse the Search page of your dedicated SaC instance
 note right
- UML tags can be specified per sequence in mission.json by the sequence creator.
- The UML tag search is done against these.
+  There are two search options both available at [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories Search page]];
+  Search by keyword in sequence title and search by UML tag;
 end note
-stop
+Developer -> B: Search by Keyword in Sequence Title
+Developer -> C: Search by UML Tag associated with Sequence
+note right
+ It is not possible to search the UML code that the sequences are written in directly.
+ UML tags can be specified per sequence in mission.json by the sequence creator.
+ The UML tag search is performed against these tags.
+end note
+Developer ->D: Browse through the sequences that match the specified search criteria
 @enduml
