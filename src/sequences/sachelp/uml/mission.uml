@@ -6,37 +6,47 @@ title
 
 end title
 
-start
-:Start;
-:Open a terminal session;
-:Go to your cloned copy of your dedicated instance of SaC;
-note left
- Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+skinparam sequenceArrowColor Purple
+skinparam sequenceParticipantBorderColor Purple
+skinparam sequenceActorBorderColor Purple
+skinparam sequenceLifeLineBorderColor Purple
+actor Developer
+participant "Start" as A #lightGreen
+participant "Go to Clone" as B #white
+participant "Open Editor" as C #white
+participant "Create Mission" as D #white
+participant "Test" as E #white
+participant "Commit" as F #white
+participant "Deploy" as G #orange
+
+
+Developer -> A: Open a terminal session
+Developer -> B: Go to your cloned copy of your dedicated instance of SaC
+note right
+   Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
 end note
-:Add mission sequences;
+Developer -> C: Open your editor of choice
+Developer -> D: Create new Mission
 note right
   Missions are defined in mission.json file in the src folder.
 end note
-note left
-  Missions are comprised of sequences
-  Sequences are defined as code in the form of UML files
-end note
 note right
-  [[https://www.planttext.com/{Right click to open PlantText in a new window or a new tab} PlantText]] can be used to create UML files.
-  [[https://real-world-plantuml.com{Right click to open Real World PlantUml in a new window or a new tab} Real World PlantUml]] provides a wide set of UML samples.
+  Missions are comprised of sequences, each mission requires at least one sequence
+  Each mission needs a dedicated folder in the sequences sub-directory
+  Sequences are defined as code in the form of UML files added to the sequences's sub-directory
 end note
-:Update unit tests if necessary;
+Developer -> E: Update unit tests if necessary;
 note right
   [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]] was provided with some basic unit tests
   As you add content be sure to ensure the test coverage is maintained
 end note
-:Commit your changes;
-:Verify the pipeline is green;
-note left
-  The continuous integration pipeline automatically generates the SVG images from the UML files.
-  If you want to generate the SVG files locally you can run the generatesvg.sh script to generate the SVG images from the sequence UML files;
+Developer -> F: Commit changes and verify workflow is green;
+note right
+  The continuous integration workflow automatically generates the SVG images from the UML files.
+  If you want to generate the SVG files locally you can run the generatesvg.sh script to generate them from the sequence UML files;
 end note
-:Merge the changes;
-:If the pipeline hasn't deployed your site, deploy it manually by running the command npm run deploy;
-stop
+Developer -> G: Once changes are merged, thw workflow will deploy the changes.
+note right
+  You can also deploy the changes manually by running the command npm run deploy;
+end note
 @enduml

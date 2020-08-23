@@ -6,19 +6,27 @@ title
 
 end title
 
-start
-:Start;
-:Open a terminal session;
-:Go to your cloned copy of your dedicated instance of SaC;
-note left
- Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+actor Developer
+participant "Start" as A #lightGreen
+participant "Go to Clone" as B #white
+participant "Verify Homepage" as C #white
+participant "Commit All Changes" as D #white
+participant "Publish" as E #white
+participant "Browse" as G #orange
+
+Developer -> A: Open a terminal session
+Developer -> B: Go to your cloned copy of your dedicated instance of SaC
+note right
+   Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
 end note
-:Verify the homepage value in the package.json file is set to the address of the repository for your instance of SaC;
+Developer -> C: Verify the homepage value in the package.json file is set to the address of the repository for your instance of SaC;
 note right
   The package.json file is located in the root folder.
 end note
-:Ensure all changes have been saved, committed and merged;
-:If the pipeline hasn't deployed your site, deploy it manually by running the command npm run deploy;
-:Site will be published to [[https://github.com/pages/your_organization/your_repository https://github.com/pages/your_organization/your_repository]];
-stop
+Developer -> D: Ensure all changes have been saved, committed and merged;
+note right
+  If the workflow hasn't deployed your site, you can deploy it manually by running the command npm run deploy;
+note end
+Developer -> E: Site will be published to [[https://github.com/pages/your_organization/your_repository https://github.com/pages/your_organization/your_repository]];
+Developer -> F: Browse to site
 @enduml
