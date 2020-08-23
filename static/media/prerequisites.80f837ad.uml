@@ -1,0 +1,24 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Prerequisites for adding missions and sequences
+
+end title
+
+actor Developer
+participant "Git Bash" as A #lightGreen
+participant "Node.js and npm" as B #white
+participant "Docker" as C #white
+
+Developer -> A: [[https://git-scm.com/download/win{Right click to open the Git Bash Installation Instructions in a new window or a new tab} Git Bash]] to work with GitHub locally. The url provided is for a Windows machine;
+Developer -> B: [[https://nodejs.org/en/download/{Right click to open Node.js and npm Installation Instructions in a new window or a new tab} Node.js and npm]] npm is the Node.js package manager;
+Developer -> C: [[https://docs.docker.com/docker-for-windows/install/{Right click to open the Docker for Windows Installation Instructions in a new window or a new tab} Docker]] installed locally. Url provided is for a Windows machine;
+note right
+  SVG files are generated from the UML files in the continuous integration workflow.
+  Docker is only needed if you want to generate the SVG files from the UML on your local machine.
+  Therefore the use of docker is optional.
+end note
+
+@enduml
+

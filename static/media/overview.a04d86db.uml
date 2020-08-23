@@ -25,7 +25,7 @@ A--> B: Submit PR
 activate C
 
 B--> C: Merge PR
-B--> C: Publish
+B--> C: Published automatically via GitHub Workflow
 
 C--> C: Consume Sequences by browsing to \nGitHub pages site of new instance \nof SaC repository
 deactivate C
