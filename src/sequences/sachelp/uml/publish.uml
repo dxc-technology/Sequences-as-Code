@@ -26,7 +26,7 @@ end note
 Developer -> D: Ensure all changes have been saved, committed and merged;
 note right
   If the workflow hasn't deployed your site, you can deploy it manually by running the command npm run deploy;
-note end
+end note
 Developer -> E: Site will be published to [[https://github.com/pages/your_organization/your_repository https://github.com/pages/your_organization/your_repository]];
 Developer -> F: Browse to site
 @enduml
