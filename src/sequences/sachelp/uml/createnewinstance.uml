@@ -6,21 +6,34 @@ title
 
 end title
 
-start
-:Start;
-:Complete the prerequisites;
-note left
+actor Developer
+participant "Start" as A #lightGreen
+participant "Create New Repository" as B #white
+participant "Seed" as C #white
+participant "Fork" as D #white
+participant "Clone" as E #white
+participant "Update Package.json" as F #white
+participant "Replace SaC links" as G #white
+participant "Install Dependencies" as H #white
+participant "Add Missions & Sequences" as I #white
+participant "Test" as J #white
+participant "Commit" as K #white
+participant "Deploy" as L #white
+participant "Browse" as M #orange
+
+Developer -> A: Complete the prerequisites;
+note right
  Prerequisites listed in a dedicated sequence diagram under the help menu.
 end note
-:Create and configure a new git repository;
+Developer -> B: Create and configure a new git repository;
 note right
   Protect the master branch
   Enable branch protection rules
   Require reviews on PRs
   etc. etc.
 end note
-:Seed the repository with the current release of SaC, which is available at [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]];
-note left
+Developer -> C: Seed the repository with the current release of SaC, which is available at [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]];
+note right
   [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repositories]] default pipeline includes
   - markdown spelling checks
   - dockerfile, json and js linting
@@ -30,30 +43,32 @@ note left
   - SVG diagrams generated from the sequence UML files and are committed to repository
   - code to deploy your site to the repositories GitHub pages site when the Master branch is updated.
 end note
-:Fork your newly created repository [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]];
-:Clone your fork on your local machine;
-:Update the homepage value in the package.json file with the (case sensitive) address of your new repository;
+Developer -> D: Fork your newly created repository [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]];
+Developer -> E: Clone your fork on your local machine
+Developer -> F: Update the homepage value in the package.json file with the (case sensitive) address of your new repository
 note right
   The base url for generated site needs to be set correctly for your missions and sequences to render.
 end note
-:Find and replace all references to the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]] with the address of your instace of the repository;
-note left
+Developer -> G: Find and replace all references to the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]] with the address of your instance of the repository;
+note right
   You can ignore the references in the sample uml and svg files as you presumably will be replacing those files.
 end note
-:Open a terminal session, go to your local folder and run <i>npm install</i>;
+Developer -> H: Open a terminal session, go to your local folder and run <i>npm install</i>;
 note right
   This is to install the dependencies in the local node_modules folder
 end note
-:Add missions and sequences;
+Developer -> I: Add missions and sequences
+note right
 :Remove the sample mission and sequence, entitled Your mission, created when you created the instance of the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]];
-note left
   Delete the entry for yourmission from missions.json.
   Delete the associated images/yourmission.svg and uml/yourmission.uml files from the sequences/yourmission folder.
 end note
-:Run unit tests;
-:Update any unit tests that need to be updated;
-:Commit your changes;
-:Deploy;
-:Verify your site is up and running. It should be available at [[https://github.com/pages/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories GitHub pages site]];;
-stop
+Developer -> J: Run unit tests
+note right
+  Remember to update any unit tests that need to be updated;
+end note
+Developer -> K: Commit your changes
+Developer -> L: Deploy
+Developer -> M: Verify your site is up and running. It should be available at [[https://github.com/pages/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories GitHub pages site]];
+
 @enduml
