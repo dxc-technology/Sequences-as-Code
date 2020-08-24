@@ -1,0 +1,68 @@
+@startuml
+
+title
+
+  <font color=purple><b>SaC Help</b></font> - Update an instance of SaC following a new release
+
+end title
+
+actor Developer
+participant "Start" as A #lightGreen
+participant "Go to Clone" as B #white
+participant "Backup Clone" as C #white
+participant "Get Latest Release" as D #white
+participant "Apply Release" as E #white
+participant "Update package.json" as F #white
+participant "Replace SaC links" as G #white
+participant "Install Dependencies" as H #white
+participant "Reapply Missions & Sequences" as I #white
+participant "Remove Sample Mission" as J #white
+participant "Test" as K #white
+participant "Commit" as L #white
+participant "Deploy" as M #white
+participant "Browse" as N #orange
+
+Developer -> A: Open a terminal session
+Developer -> B: Go to your cloned copy of your dedicated instance of SaC
+note right
+   Clone will be of [[https://github.com/your_organization/your_repository{Right click to open in a new window or a new tab} Your repository]]
+end note
+Developer -> C: Back up your cloned files
+Developer -> D: Get the updated version of SaC from the [[https://github.com/dxc-technology/Sequences-as-Code/releases{Right click to open in a new window or a new tab} Releases tab]] of the SaC repository
+Developer -> E: Apply the latest version
+Developer -> F: Update the homepage value in the package.json file with the (case sensitive) address of your new repository
+note right
+  The base url for generated site needs to be set correctly for your missions and sequences to render.
+end note
+Developer -> G: Find and replace all references to the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]] with the address of your instance of the repository
+note right
+  You can ignore the references in the sample uml and svg files as you presumably will be replacing those files.
+end note
+Developer -> H: Open a terminal session, go to your local folder and run <i>npm install</i>
+note right
+  This is to install any new or updated dependencies in the local node_modules folder
+end note
+Developer -> I: Remove the sample mission and sequence, entitled Your mission, provided with the new release of the [[https://github.com/dxc-technology/Sequences-as-Code{Right click to open in a new window or a new tab} SaC repository]]
+note right
+  Delete the entry for yourmission from missions.json.
+  Delete the associated images/yourmission.svg and uml/yourmission.uml files from the sequences/yourmission folder.
+end note
+Developer -> J: Reapply your missions and sequences
+note right
+  Re configure your missions and sequences in missions.json.
+  Re add your sequence uml and svg files to the appropriate sequences sub-folder.
+end note
+Developer -> K: Run unit tests
+note right
+  Remember to update any unit tests that need to be updated
+end note
+Developer -> L: Commit your changes
+Developer -> M: Deploy
+Developer -> N: Verify your site is up and running. It should be available at [[https://github.com/pages/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories GitHub pages site]]
+note right
+  Remember to update any unit tests that need to be updated
+end note
+Developer -> L: Commit your changes
+Developer -> M: Deploy
+Developer -> N: Verify your site is up and running. It should be available at [[https://github.com/pages/your_organization/your_repository{Right click to open in a new window or a new tab} Your repositories GitHub pages site]]
+@enduml

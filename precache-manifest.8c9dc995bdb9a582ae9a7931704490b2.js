@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5447ba9600174207f30560e0335421c4",
+    "revision": "3a716cb3a1346bbe396fe819cb035088",
     "url": "/Sequences-as-Code/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sequences-as-Code/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "96fc0328a01d054c2af1",
+    "revision": "ff95b7006c9f6e5d24f0",
     "url": "/Sequences-as-Code/static/css/main.f229c110.chunk.css"
   },
   {
@@ -20,20 +20,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sequences-as-Code/static/js/2.7b4ec19e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "96fc0328a01d054c2af1",
-    "url": "/Sequences-as-Code/static/js/main.254f8516.chunk.js"
+    "revision": "ff95b7006c9f6e5d24f0",
+    "url": "/Sequences-as-Code/static/js/main.fa7ce827.chunk.js"
   },
   {
     "revision": "784749eb3244b31edba9",
     "url": "/Sequences-as-Code/static/js/runtime-main.43884443.js"
   },
   {
-    "revision": "b818cf8f6e730ab3562a019497b417a0",
-    "url": "/Sequences-as-Code/static/media/createnewinstance.b818cf8f.svg"
+    "revision": "b667aa0ac5a2b4bb46ce69bd53719c57",
+    "url": "/Sequences-as-Code/static/media/createnewinstance.b667aa0a.uml"
   },
   {
-    "revision": "c24a71a468e37137196bd3553ff99b78",
-    "url": "/Sequences-as-Code/static/media/createnewinstance.c24a71a4.uml"
+    "revision": "e9dca29f83df0a253203343699e36836",
+    "url": "/Sequences-as-Code/static/media/createnewinstance.e9dca29f.svg"
   },
   {
     "revision": "8e3133859a770b8542b7966946494c0c",
@@ -96,12 +96,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sequences-as-Code/static/media/sequence.b97fb5f9.uml"
   },
   {
-    "revision": "702c6ffc20c6248404fdcb85fa43fa90",
-    "url": "/Sequences-as-Code/static/media/updateinstance.702c6ffc.svg"
+    "revision": "ef2336c6b50125cb1d047c9a187b1fc0",
+    "url": "/Sequences-as-Code/static/media/updateinstance.ef2336c6.svg"
   },
   {
-    "revision": "f6d4e65464f63ca9db9aa274863837a1",
-    "url": "/Sequences-as-Code/static/media/updateinstance.f6d4e654.uml"
+    "revision": "f31fbd759737dba3cbb40a2a5383476b",
+    "url": "/Sequences-as-Code/static/media/updateinstance.f31fbd75.uml"
   },
   {
     "revision": "7207bd1b9bf06f2d24a7cdefa546ee85",
