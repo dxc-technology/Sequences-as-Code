@@ -12,7 +12,7 @@ participant "Go to Clone" as B #white
 participant "Verify Homepage" as C #white
 participant "Commit All Changes" as D #white
 participant "Publish" as E #white
-participant "Browse" as G #orange
+participant "Browse" as F #orange
 
 Developer -> A: Open a terminal session
 Developer -> B: Go to your cloned copy of your dedicated instance of SaC
